@@ -2,14 +2,38 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+
+        double[] payments = {20000, 35000, 150000, 37000, 74000};
+
+//1
+        double sun = 0;
+        for (int i = 0; i < payments.length; i++) {
+            sun += payments[i];
+            System.out.println("Сумма трат за месяц составила" + sun + "рублей");
+        }
+        //2
+        double min = Double.MAX_VALUE;
+        double max = Double.MIN_VALUE;
+        for (double payment : payments) {
+            if (payment < min) {
+                min = payment;
+            }
+            if (max < payment) {
+                max = payment;
+            }
+        }
+        System.out.print("Минимальная сумма трат за неделю составила" + min + "рублей." + "Максимальная сумма трат за неделю составила" + max + "рублей");
+
+        //3
+        double average = sun / payments.length;
+        System.out.print("Средняя сумма трат за месяц составила" + average + "рублей.");
+
+
+        //4
+        char[] reverseFullName = {'n', 'a', 'v', 'i', ' ', 'v', 'o', 'n', 'a', 'v', 'i'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
         }
     }
 }
